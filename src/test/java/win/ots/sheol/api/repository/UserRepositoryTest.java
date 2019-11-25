@@ -25,6 +25,7 @@ class UserRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
         user.setName("a");
         user.setPassword("b");
         user.setSalt("c");
+        user.setMobile("12345678901");
         user.setCreateTime(new Date());
         user.setUpdateTime(new Date());
         user = userRepository.save(user);

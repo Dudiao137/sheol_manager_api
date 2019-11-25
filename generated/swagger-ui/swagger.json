@@ -1,0 +1,231 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "hell manager api",
+    "version" : "v1",
+    "title" : "hell manager api",
+    "contact" : {
+      "name" : "Ots Wang",
+      "url" : "http://www.otswang.win",
+      "email" : "otswang@cqu.edu.cn"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "localhost:8090",
+  "basePath" : "/api",
+  "tags" : [ {
+    "name" : "登录管理"
+  } ],
+  "paths" : {
+    "/v0.1/login" : {
+      "post" : {
+        "tags" : [ "登录管理" ],
+        "summary" : "登录",
+        "description" : "",
+        "operationId" : "login",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/UserLogin"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/v0.1/login/mobile" : {
+      "post" : {
+        "tags" : [ "登录管理" ],
+        "summary" : "用手机号登录",
+        "description" : "",
+        "operationId" : "loginByMobile",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/MobileLoginInfo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/v0.1/password/reset" : {
+      "post" : {
+        "tags" : [ "登录管理" ],
+        "summary" : "重置密码",
+        "description" : "",
+        "operationId" : "resetPassw",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/PasswordResetInfo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/v0.1/register" : {
+      "post" : {
+        "tags" : [ "登录管理" ],
+        "summary" : "用户注册",
+        "description" : "",
+        "operationId" : "register",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/UserRegisterInfo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/v0.1/sms/code" : {
+      "get" : {
+        "tags" : [ "登录管理" ],
+        "summary" : "获取验证码",
+        "description" : "",
+        "operationId" : "getSmsCode",
+        "parameters" : [ {
+          "name" : "mobile",
+          "in" : "query",
+          "description" : "手机号",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "query",
+          "description" : "验证码类型 0 登录 1 重置",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "MobileLoginInfo" : {
+      "type" : "object",
+      "properties" : {
+        "mobile" : {
+          "type" : "string",
+          "description" : "用户手机号"
+        },
+        "code" : {
+          "type" : "string",
+          "description" : "验证码"
+        }
+      }
+    },
+    "PasswordResetInfo" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "用户名"
+        },
+        "mobile" : {
+          "type" : "string",
+          "description" : "手机号"
+        },
+        "code" : {
+          "type" : "string",
+          "description" : "验证码"
+        }
+      }
+    },
+    "Result" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "data" : {
+          "type" : "object"
+        }
+      }
+    },
+    "UserLogin" : {
+      "type" : "object",
+      "properties" : {
+        "userName" : {
+          "type" : "string",
+          "description" : "用户名"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "用户密码"
+        }
+      }
+    },
+    "UserRegisterInfo" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "用户名"
+        },
+        "mobile" : {
+          "type" : "string",
+          "description" : "手机号"
+        },
+        "avatar" : {
+          "type" : "string",
+          "description" : "头像url"
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "密码"
+        }
+      }
+    }
+  }
+}
