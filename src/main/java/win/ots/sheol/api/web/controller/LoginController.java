@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import win.ots.sheol.api.util.Result;
 import win.ots.sheol.api.web.vo.*;
 
+import javax.validation.Valid;
+
 /**
  * @author: sy.wang
  * @date: 2019-11-23
@@ -25,8 +27,7 @@ public class LoginController {
 
     @ApiOperation("获取验证码")
     @RequestMapping(value = "/sms/code", method = RequestMethod.GET)
-    public Result<String> getSmsCode(@RequestParam("mobile") @ApiParam("手机号") String mobile,
-                                     @RequestParam("type") @ApiParam("验证码类型 0 登录 1 重置") Integer type) {
+    public Result<CheckVo> getSmsCode(@RequestBody @Valid CheckVo checkVo) {
 
         return Result.success(null);
     }
