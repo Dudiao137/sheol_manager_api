@@ -2,9 +2,9 @@ package win.ots.sheol.api.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author : sy.wang
@@ -13,21 +13,11 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "tbl_category")
-public class Category implements Serializable {
+public class Category extends BaseEntity {
 
-    @Column(name = "name", columnDefinition = "varchar(32) comment '类目名称'")
+    @Column(name = "name", columnDefinition = "varchar(32) not null comment '类目名称'")
     private String name;
 
-    @Column(name = "parent_id", columnDefinition = "int comment '父级id'")
+    @Column(name = "parent_id", columnDefinition = "int default 0 not null comment '父级id'")
     private Integer parentId;
-
-    @Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id;
-
-	@Column(name = "create_time")
-	private Date createTime;
-
-	@Column(name = "update_time")
-	private Date updateTime;
 }

@@ -2,9 +2,9 @@ package win.ots.sheol.api.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * @author : sy.wang
@@ -13,25 +13,15 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "tbl_order")
-public class Order implements Serializable {
+public class Order extends BaseEntity {
 
-    @Column(name = "product_id", columnDefinition = "bigint comment '商品id'")
+    @Column(name = "product_id", columnDefinition = "bigint not null comment '商品id'")
     private Long productId;
 
-    @Column(name = "handler_id", columnDefinition = "bigint comment '操作人id'")
+    @Column(name = "handler_id", columnDefinition = "bigint not null comment '操作人id'")
     private Long handlerId;
 
-    @Column(name = "status", columnDefinition = "int comment '订单状态'")
+    @Column(name = "status", columnDefinition = "int default 0 comment '订单状态'")
     private Integer status;
 
-
-    @Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id;
-
-	@Column(name = "create_time")
-	private Date createTime;
-
-	@Column(name = "update_time")
-	private Date updateTime;
 }

@@ -25,7 +25,12 @@ public class ProductRecord {
 	@Column(name = "day_out", columnDefinition = "bigint comment '流出'")
 	private Long dayOut;
 
-	@Column(name = "create_time")
+	@Column(name = "create_time", columnDefinition = "datetime default current_timestamp()")
 	private Date createTime;
+
+	@PrePersist
+	public void prePersist() {
+		this.createTime = new Date();
+	}
 
 }
