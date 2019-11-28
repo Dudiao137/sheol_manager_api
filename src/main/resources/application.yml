@@ -19,6 +19,15 @@ spring:
     hibernate:
       ddl-auto: update
 
+  data:
+    mongodb:
+      #username: @mongo.username@
+      #password: @mongo.password@
+      uri: @mongo.uri@
+      #database: @mongo.database@
+      #authentication-database: admin
+
+
 logging:
   level:
     win.ots.sheol.api.repository : debug

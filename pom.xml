@@ -36,6 +36,12 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!--mongo db-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
         <!--redis-->
         <!--<dependency>
             <groupId>org.springframework.boot</groupId>
@@ -122,10 +128,10 @@
                 <version>3.1.1</version>
                 <configuration>
                     <apiSources>
-                      <apiSource>
+                        <apiSource>
                             <springmvc>true</springmvc>
-                            <locations>win.ots.sheol.api</locations>
-<!--                            <schemes>http,https</schemes>-->
+                            <locations>win.ots.hell.api</locations>
+                            <!--                            <schemes>http,https</schemes>-->
                             <host>localhost:8090</host>
                             <basePath>/api</basePath>
                             <info>
