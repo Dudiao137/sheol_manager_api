@@ -2,6 +2,8 @@ package win.ots.hell.api.web.vo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
+import win.ots.hell.api.entity.Permission;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -25,4 +27,16 @@ public class PermissionVo {
 
     @ApiModelProperty("父权限名称")
     private String parentName;
+
+    public static Permission toEntity(PermissionVo vo) {
+        Permission permission = new Permission();
+        BeanUtils.copyProperties(vo, permission);
+        return permission;
+    }
+
+    public static PermissionVo fromEntity(Permission permission) {
+        PermissionVo permissionVo = new PermissionVo();
+        BeanUtils.copyProperties(permission, permissionVo);
+        return permissionVo;
+    }
 }

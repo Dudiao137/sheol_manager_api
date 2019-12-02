@@ -7,7 +7,10 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import win.ots.hell.api.util.Result;
-import win.ots.hell.api.web.vo.*;
+import win.ots.hell.api.web.vo.EquipChangeRecordVo;
+import win.ots.hell.api.web.vo.EquipUseRecordVo;
+import win.ots.hell.api.web.vo.EquipmentQueryVo;
+import win.ots.hell.api.web.vo.EquipmentVo;
 
 import javax.validation.Valid;
 
