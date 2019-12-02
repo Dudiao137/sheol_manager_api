@@ -40,7 +40,7 @@ class UserRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
         log.info("all users : {}", gson.toJson(users));
 
         try {
-            Thread.sleep(10000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -51,4 +51,18 @@ class UserRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
 
         log.info("after update, user : {}", gson.toJson(user));
     }
+
+    @Test
+    public void testSelect() {
+        User user = new User();
+        user.setName("a");
+        user.setPassword("b");
+        user.setSalt("c");
+        user.setMobile("12345678901");
+        user = userRepository.save(user);
+        Long userId = user.getId();
+        userRepository.findById(userId).ifPresent(userT -> log.info("user : {}", userT));
+        userRepository.findById(userId).ifPresent(userT -> log.info("user : {}", userT));
+    }
+
 }

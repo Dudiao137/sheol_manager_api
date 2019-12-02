@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "tbl_log_action")
-public class LogAction {
+public class LogAction extends BaseEntity {
 
     @Column(name = "user_id", columnDefinition = "bigint not null comment '用户id'")
     private Long userId;
