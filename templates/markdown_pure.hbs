@@ -1,0 +1,63 @@
+{{#info}}# {{title}}
+
+## {{host}}{{basePath}}
+
+{{description}}
+
+{{#contact}}[**Contact the developer**](mailto:{{email}}){{/contact}}
+
+**Version** {{version}}
+{{/info}}
+# APIs
+{{#each tags}}
+## {{name}}
+{{#each paths}}
+{{#this}}
+### {{@key}}
+ {{#this}}
+{{#get}}
+
+{{/get}}
+
+{{#put}}
+
+{{/put}}
+
+{{#post}}
+
+{{/post}}
+
+{{#delete}}
+
+{{/delete}}
+
+{{#option}}
+
+{{/option}}
+
+{{#patch}}
+
+{{/patch}}
+
+{{#head}}
+### HEAD
+{{> operation}}
+---
+{{/head}}
+
+{{/this}}
+{{/this}}
+{{/each}}
+{{/each}}
+
+# Definitions
+{{#each definitions}}
+## <a name="/definitions/{{key}}">{{@key}}</a>
+
+| name | type | required | description | example |
+| ---- | ---- | -------- | ----------- | ------- |
+{{#each this.properties}}| {{@key}} |   | {{#required}}required{{/required}}{{^required}}optional{{/required}} | {{#description}}{{{description}}}{{/description}}{{^description}}-{{/description}} | {{example}} |
+{{/each}}
+
+{{/each}}
+

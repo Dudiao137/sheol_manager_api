@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "hell manager api",
-    "version" : "v1",
+    "version" : "v0.1",
     "title" : "hell manager api",
     "contact" : {
       "name" : "Ots Wang",
@@ -15,7 +15,7 @@
     }
   },
   "host" : "localhost:8090",
-  "basePath" : "/api",
+  "basePath" : "/",
   "tags" : [ {
     "name" : "商品管理"
   }, {

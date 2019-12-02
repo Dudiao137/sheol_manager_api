@@ -133,10 +133,10 @@
                             <locations>win.ots.hell.api</locations>
                             <!--                            <schemes>http,https</schemes>-->
                             <host>localhost:8090</host>
-                            <basePath>/api</basePath>
+                            <basePath>/</basePath>
                             <info>
                                 <title>hell manager api</title>
-                                <version>v1</version>
+                                <version>v0.1</version>
                                 <description>hell manager api</description>
                                 <contact>
                                     <email>otswang@cqu.edu.cn</email>
@@ -148,7 +148,7 @@
                                     <name>Apache 2.0</name>
                                 </license>
                             </info>
-                            <templatePath>${basedir}/templates/strapdown.html.hbs</templatePath>
+                            <templatePath>${basedir}/templates/html.hbs</templatePath>
                             <outputPath>${basedir}/generated/document.html</outputPath>
                             <swaggerDirectory>generated/swagger-ui</swaggerDirectory>
                         </apiSource>

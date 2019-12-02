@@ -1,8 +1,6 @@
-#{{#info}}{{title}}
+# {{#info}}{{title}}
 
-
-## {{join schemes " | "}}://{{host}}{{basePath}}
-
+## {{host}}{{basePath}}
 
 {{description}}
 
@@ -12,20 +10,7 @@
 
 **Version** {{version}}
 
-[**Terms of Service**]({{termsOfService}})
-
-{{#license}}[**{{name}}**]({{url}}){{/license}}
-
 {{/info}}
-
-{{#if consumes}}**Consumes:** {{join consumes ", "}}{{/if}}
-
-{{#if produces}}**Produces:** {{join produces ", "}}{{/if}}
-
-{{#if securityDefinitions}}
-# Security Definitions
-{{/if}}
-{{> security}}
 
 # APIs
 
