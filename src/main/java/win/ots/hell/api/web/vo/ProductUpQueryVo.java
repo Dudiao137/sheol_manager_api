@@ -8,7 +8,7 @@ import lombok.Data;
  * @date : 2019-11-26
  */
 @Data
-public class ProductQueryVo extends PageQuery {
+public class ProductUpQueryVo extends PageQuery {
 
     @ApiModelProperty("状态")
     private Integer status;

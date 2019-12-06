@@ -7,5 +7,5 @@ import lombok.Data;
  * @date : 2019-11-26
  */
 @Data
-public class ProductVo {
+public class ProductUpVo {
 }

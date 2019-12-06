@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+import win.ots.hell.api.constant.Constant;
 import win.ots.hell.api.util.Result;
 import win.ots.hell.api.web.vo.EquipChangeRecordVo;
 import win.ots.hell.api.web.vo.EquipUseRecordVo;
@@ -13,6 +14,7 @@ import win.ots.hell.api.web.vo.EquipmentQueryVo;
 import win.ots.hell.api.web.vo.EquipmentVo;
 
 import javax.validation.Valid;
+import java.util.Random;
 
 /**
  * @author : sy.wang
@@ -52,8 +54,9 @@ public class EquipmentController {
 
     @ApiModelProperty("轮回")
     @RequestMapping("/cycle/next")
-    public Result<Integer> getNextLevel(@RequestParam("product_id") @ApiParam("设备id") Integer productId) {
-        return Result.success(null);
+    public Result<Integer> getNextLevel(@RequestParam("product_id") @ApiParam("产品id") Integer productId) {
+        Integer next = new Random().nextInt(Constant.MAX_LEVEL_OF_HEEL);
+        return Result.success(next);
     }
 
 }

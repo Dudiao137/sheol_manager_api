@@ -6,8 +6,8 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import win.ots.hell.api.util.Result;
-import win.ots.hell.api.web.vo.ProductQueryVo;
-import win.ots.hell.api.web.vo.ProductVo;
+import win.ots.hell.api.web.vo.ProductUpQueryVo;
+import win.ots.hell.api.web.vo.ProductUpVo;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -22,15 +22,15 @@ import java.util.List;
 public class ProductController {
 
     @ApiOperation("查询列表")
-    @RequestMapping(value = "/query", method = RequestMethod.POST)
-    public Result<Page<ProductVo>> query(@RequestBody @Valid ProductQueryVo queryVo) {
+    @RequestMapping(value = "/up/query", method = RequestMethod.POST)
+    public Result<Page<ProductUpVo>> query(@RequestBody @Valid ProductUpQueryVo queryVo) {
 
         return Result.success(null);
     }
 
     @ApiOperation("编辑")
     @RequestMapping(value = "/edit", method = RequestMethod.PUT)
-    public Result<ProductVo> edit(@RequestBody @Valid ProductVo productVo) {
+    public Result<ProductUpVo> edit(@RequestBody @Valid ProductUpVo productUpVo) {
         return Result.success(null);
     }
 
